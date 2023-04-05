@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="theme-color" content="#1e2023">
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <title>i-Lib Ramakrishna Mission Vivekananda Centenary College</title>
+    <style>
+      body{
+        background-color:#18191c;
+      }
+      ::-moz-selection { /* Code for Firefox */
+		color: #ffc86a;
+		background: black;
+		}
+
+	::selection {
+		color: #ffc86a;
+		background: black;
+	}
+    </style>
+  </head>
+  <body class="darken" vs-theme="dark">
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <style>
+    @media screen and (max-width: 990px){
+      .vs-card__group .vs-card__group-prev{
+        display:none;
+      }
+      .vs-card__group .vs-card__group-next{
+        display:none;
+      }
+    }
+    </style>
+    <script src="<%= VUE_APP_ZBAR_WASM_REPOSITORY %>/dist/index.js"></script>
+  </body>
+</html>

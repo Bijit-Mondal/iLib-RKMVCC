@@ -1,0 +1,30 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    //match /{document=**} {
+     // allow read, write: if
+     //   request.time < timestamp.date(2022, 2, 25);
+   // }
+    match /userInfo/{uid} {
+        allow create : if request.auth.uid == uid;
+        allow read : if request.auth.uid == uid || request.auth.token.admin;
+    }
+    match /users/{uid}{
+        allow read : if request.auth.uid == uid || request.auth.token.admin;
+    }
+
+    match /books/{isbn}{
+        allow write : if false;
+        allow read: if request.auth.uid!=null && request.auth.token.email_verified;
+    }
+      match /requested/{id}{
+          allow read : if request.auth.token.admin;
+          allow create;
+          allow update : if request.auth.token.admin;
+      }
+      match /borrowed/{id}{
+          allow read : if request.auth.token.admin;
+          allow write : if request.auth.token.admin;
+      }
+  }
+}
