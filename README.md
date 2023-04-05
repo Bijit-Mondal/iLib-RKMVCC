@@ -1,6 +1,9 @@
 # iLib  
 ### A Open Source Library Management Project For Ramakrishna Mission Vivekananda Centenery College
 
+## Documentation
+[Click Here](https://ilib.website)
+
 ## Project setup
 ```
 npm install
